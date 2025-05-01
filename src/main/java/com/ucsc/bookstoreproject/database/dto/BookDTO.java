@@ -1,20 +1,14 @@
-package com.ucsc.bookstoreproject.database.model;
+package com.ucsc.bookstoreproject.database.dto;
 
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "books")
 @Getter
 @Setter
-public class BookModel {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class BookDTO {
     private Long id;
 
     private String title;
@@ -47,8 +41,5 @@ public class BookModel {
 
     private Boolean isAvailable;
 
-    private LocalDateTime createdAt;
-
-    private LocalDateTime updatedAt;
 
 }
