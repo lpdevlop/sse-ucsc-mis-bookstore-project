@@ -43,5 +43,15 @@ public class BookController {
         }
     }
 
+    public ResponseEntity<PayLoadDTO> searchBooks(@RequestBody BookDTO bookDTO) {
+        try {
+            PayLoadDTO payLoadDTO = new PayLoadDTO();
+            payLoadDTO.put("Book searched successfully", bookService.searchBooks(bookDTO));
+            return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+
 
 }

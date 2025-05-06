@@ -6,6 +6,8 @@ import com.ucsc.bookstoreproject.database.repository.BookRepository;
 import com.ucsc.bookstoreproject.service.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -47,6 +49,11 @@ public class BookServiceImpl implements BookService {
     public String deleteBooks(BookDTO bookDTO) {
             bookRepository.deleteById(bookDTO.getId());
             return "Book deleted";
+    }
+
+    @Override
+    public List<BookDTO> searchBooks(BookDTO bookDTO) {
+        return null;
     }
 
 }
