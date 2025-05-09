@@ -1,12 +1,16 @@
 package com.ucsc.bookstoreproject.database.model;
 
+import com.ucsc.bookstoreproject.database.dto.UserDTO;
 import com.ucsc.bookstoreproject.enums.UserRoleEnum;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -82,5 +86,21 @@ public class UserModel implements UserDetails {
     @Override
     public boolean isEnabled() {
         return enabled;
+    }
+
+
+    public UserModel(UserDTO userDTO){
+
+        this.firstName = userDTO.getFirstName();
+        this.lastName = userDTO.getLastName();
+        this.password = userDTO.getPassword();
+        this.email = userDTO.getEmail();
+        this.address = userDTO.getAddress();
+        this.phoneNumber = userDTO.getPhoneNumber();
+        this.role = userDTO.getRole();
+        this.accountNonExpired = true;
+        this.accountNonLocked = true;
+        this.credentialsNonExpired = true;
+        this.enabled = true;
     }
 }

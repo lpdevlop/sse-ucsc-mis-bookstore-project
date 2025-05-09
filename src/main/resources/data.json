@@ -54,5 +54,34 @@
       "imageUrl": "https://example.com/images/intro-algorithms.jpg",
       "isAvailable": false
     }
+  ],
+
+  "users": [
+    {
+      "firstName": "Alice",
+      "lastName": "Johnson",
+      "password": "$2a$12$0X44bTEiT0d/kGhKXV7lXOwgI87XXNm5s5.HNR1V53bW5dw.2dlDG",
+      "email": "alice.johnson@example.com",
+      "address": "123 Main Street, Springfield",
+      "phoneNumber": "1234567890",
+      "role": "ROLE_SUPER_ADMIN",
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "credentialsNonExpired": true,
+      "enabled": true
+    },
+    {
+      "firstName": "Bob",
+      "lastName": "Smith",
+      "password": "$2a$12$0X44bTEiT0d/kGhKXV7lXOwgI87XXNm5s5.HNR1V53bW5dw.2dlDG",
+      "email": "bob.smith@example.com",
+      "address": "456 Elm Street, Shelbyville",
+      "phoneNumber": "0987654321",
+      "role": "ROLE_ADMIN",
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "credentialsNonExpired": true,
+      "enabled": true
+    }
   ]
 }
