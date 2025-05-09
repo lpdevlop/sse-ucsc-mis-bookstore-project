@@ -32,7 +32,6 @@ public class OrderModel {
     @JoinColumn(name = "user_id")
     private UserModel user;
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    private List<BookModel> items;
+
 
 }

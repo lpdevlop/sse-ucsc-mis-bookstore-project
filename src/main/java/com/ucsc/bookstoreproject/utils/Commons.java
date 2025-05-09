@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 public class Commons {
@@ -17,7 +18,7 @@ public class Commons {
 
     public static String readFile(File file) throws IOException {
         try (InputStream in = new FileInputStream(file)) {
-            return in.toString();
+            return new String(in.readAllBytes(), StandardCharsets.UTF_8);
         } catch (IOException e) {
             log.error("Error reading file: {}", file.getAbsolutePath(), e);
             throw e;

@@ -4,6 +4,10 @@ import com.ucsc.bookstoreproject.database.dto.BookDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -12,10 +16,10 @@ import java.time.LocalDateTime;
 @Table(name = "books")
 @Getter
 @Setter
+@EntityListeners(AuditingEntityListener.class)
 public class BookModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;
@@ -26,9 +30,9 @@ public class BookModel {
 
     private String publisher;
 
-    private LocalDate publicationDate;
+    private String publicationDate;
 
-    private BigDecimal price;
+    private Long price;
 
     private String language;
 
@@ -48,22 +52,21 @@ public class BookModel {
 
     private Boolean isAvailable;
 
+
+    @CreationTimestamp
     private LocalDateTime createdAt;
 
+    @UpdateTimestamp
     private LocalDateTime updatedAt;
 
     public BookModel() {
     }
 
     public BookModel(BookDTO bookDTO) {
-        //setter for all fields
-
         this.title = bookDTO.getTitle();
         this.author = bookDTO.getAuthor();
         this.isbn = bookDTO.getIsbn();
         this.publisher = bookDTO.getPublisher();
-        this.publicationDate = bookDTO.getPublicationDate();
-        this.price = bookDTO.getPrice();
         this.language = bookDTO.getLanguage();
         this.genre = bookDTO.getGenre();
         this.stockQuantity = bookDTO.getStockQuantity();

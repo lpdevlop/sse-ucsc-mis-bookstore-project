@@ -36,16 +36,15 @@ public class Configurations {
         try {
             Resource resource = resourceLoader.getResource("classpath:data.json");
             String content = Commons.readFile(resource.getFile());
+            log.info("Loaded file content: {}", content);
             this.placeholderModel = objectMapper.readValue(content, PlaceHolderModels.class);
-        } catch (FileNotFoundException e) {
-            log.error("File not found: {}", e.getMessage());
-            throw e;
+            log.info("Placeholder data loaded successfully.");
         } catch (IOException e) {
-            log.error("Error reading file: {}", e.getMessage());
+            log.error("Error reading or parsing the data file: {}", e.getMessage(), e);
             throw e;
         } catch (Exception e) {
-            log.error("Error while trying to load data from file: {}", e.getMessage());
-            throw e;
+            log.error("Unexpected error while loading data: {}", e.getMessage(), e);
+            throw new IOException("Failed to load configuration", e);
         }
     }
 }

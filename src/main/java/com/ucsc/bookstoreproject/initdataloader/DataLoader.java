@@ -29,7 +29,7 @@ public class DataLoader implements ApplicationRunner {
             log.info("......Data Insert Disabled........");
         } else {
             try {
-                List<BookModel> roles = configurations.getPlaceholderModel().getBookDTO().stream().map(BookModel::new).toList();
+                List<BookModel> roles = configurations.getPlaceholderModel().getBooks().stream().map(BookModel::new).toList();
                 bookDao.upsert(roles);
                 log.info("Initial Data Insert Success");
             } catch (Exception e) {

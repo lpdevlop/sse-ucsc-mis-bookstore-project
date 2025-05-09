@@ -28,7 +28,7 @@ public class UserController {
     }
 
     @PreAuthorize("hasRole('SUPER_ADMIN')")
-    @PostMapping
+    @PostMapping("l")
     public ResponseEntity<PayLoadDTO> registerAdminUser(@RequestBody UserDTO userDTO) {
         PayLoadDTO payLoadDTO=new PayLoadDTO();
         payLoadDTO.put("User registered successfully", userService.registerAdminUser(userDTO));
