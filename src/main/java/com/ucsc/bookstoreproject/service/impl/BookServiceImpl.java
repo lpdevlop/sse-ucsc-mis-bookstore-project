@@ -1,14 +1,21 @@
 package com.ucsc.bookstoreproject.service.impl;
 
 import com.ucsc.bookstoreproject.database.dto.BookDTO;
+import com.ucsc.bookstoreproject.database.dto.PaginatedResponseDTO;
+import com.ucsc.bookstoreproject.database.filters.BookSpecification;
 import com.ucsc.bookstoreproject.database.model.BookModel;
 import com.ucsc.bookstoreproject.database.repository.BookRepository;
 import com.ucsc.bookstoreproject.service.BookService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -52,8 +59,42 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public List<BookDTO> searchBooks(BookDTO bookDTO) {
-        return null;
+    public PaginatedResponseDTO searchBooks(String title, String author, String isbn, String description, int page, int size) {
+        Specification<BookModel> spec = Specification.where(null);
+
+        if (title != null && !title.isBlank()) {
+            spec = spec.and(BookSpecification.hasTitle(title));
+        }
+
+        if (author != null && !author.isBlank()) {
+            spec = spec.and(BookSpecification.hasAuthor(author));
+        }
+
+        if (isbn != null && !isbn.isBlank()) {
+            spec = spec.and(BookSpecification.hasIsbn(isbn));
+        }
+
+        if (description != null && !description.isBlank()) {
+            spec = spec.and(BookSpecification.hasDescription(description));
+        }
+
+        Pageable pageable = PageRequest.of(page, size, Sort.by("title").ascending());
+        return bookRepository.findAll(spec, pageable).stream().map(PaginatedResponseDTO::new).collect(Collectors.toList());
+    }
+
+    @Override
+    public Object getLatestBooks() {
+        return bookRepository.findAll();
+    }
+
+    @Override
+    public Object getTopSellingBooks() {
+        return bookRepository.findAll();
+    }
+
+    @Override
+    public Object getReccomondationsBooks() {
+        return bookRepository.findAll();
     }
 
 }

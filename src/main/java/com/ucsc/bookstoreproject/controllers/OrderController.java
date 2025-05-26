@@ -1,9 +1,12 @@
 package com.ucsc.bookstoreproject.controllers;
 
+import com.ucsc.bookstoreproject.database.dto.OrderDTO;
 import com.ucsc.bookstoreproject.database.dto.PayLoadDTO;
 import com.ucsc.bookstoreproject.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,12 +18,12 @@ public class OrderController {
     private final OrderService orderService;
 
 
-    public ResponseEntity<PayLoadDTO> createOrder() {
+    @PostMapping
+    public ResponseEntity<PayLoadDTO> createOrder(@RequestBody OrderDTO orderDTO) {
         PayLoadDTO payLoadDTO = new PayLoadDTO();
-        payLoadDTO.put("Order created successfully", orderService.createOrder());
+        payLoadDTO.put("Order created successfully", orderService.createOrder(orderDTO));
         return ResponseEntity.status(200).body(payLoadDTO);
     }
-
 
     public ResponseEntity<PayLoadDTO> searchOrderById() {
         PayLoadDTO payLoadDTO = new PayLoadDTO();

@@ -1,5 +1,6 @@
 package com.ucsc.bookstoreproject.service.impl;
 
+import com.ucsc.bookstoreproject.database.dto.OrderDTO;
 import com.ucsc.bookstoreproject.service.OrderService;
 import org.springframework.stereotype.Service;
 
@@ -7,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class OrderServiceImpl implements OrderService {
 
     @Override
-    public Object createOrder() {
+    public Object createOrder(OrderDTO orderDTO) {
         return null;
     }
 

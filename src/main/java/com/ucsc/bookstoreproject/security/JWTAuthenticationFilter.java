@@ -80,9 +80,19 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
-    @Override
+  @Override
     protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
         String path = request.getServletPath();
-        return path.startsWith("/api/v1/auth/login") || path.equals("/api/v1/createUser");
+        return path.startsWith("/api/v1/auth/login") ||
+                path.equals("/api/v1/createUser") ||
+                path.equals("/images/") ||
+        path.equals("/api/v1/book/latest")
+        ||
+        path.equals("/api/v1/book/top") ||
+
+                path.equals("/api/v1/book/search") ||
+
+                path.equals("/api/v1/book/recommendations");
+
     }
 }

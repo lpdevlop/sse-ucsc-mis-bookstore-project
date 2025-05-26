@@ -8,9 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/book")
@@ -42,15 +40,48 @@ public class BookController {
         }
     }
 
+    @PostMapping("/search")
     public ResponseEntity<PayLoadDTO> searchBooks(@RequestBody BookDTO bookDTO) {
         try {
             PayLoadDTO payLoadDTO = new PayLoadDTO();
-            payLoadDTO.put("Book searched successfully", bookService.searchBooks(bookDTO));
+            payLoadDTO.put("Book searched successfully", bookService.searchBooks(bookDTO.getTitle(),bookDTO.getAuthor(),bookDTO.getIsbn(),bookDTO.getDescription(),bookDTO.getPage(),bookDTO.getSize()));
             return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
         } catch (Exception e) {
             throw e;
         }
     }
 
+
+    @GetMapping("/latest")
+    public ResponseEntity<PayLoadDTO> getLatestBooks() {
+        try {
+            PayLoadDTO payLoadDTO = new PayLoadDTO();
+            payLoadDTO.put("Latest books fetched successfully", bookService.getLatestBooks());
+            return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+    @GetMapping("/top")
+    public ResponseEntity<PayLoadDTO> getTopSellingBooks() {
+        try {
+            PayLoadDTO payLoadDTO = new PayLoadDTO();
+            payLoadDTO.put("Top selling books fetched successfully", bookService.getTopSellingBooks());
+            return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+
+    @GetMapping("/recommendations")
+    public ResponseEntity<PayLoadDTO> getReccomondationsBooks() {
+        try {
+            PayLoadDTO payLoadDTO = new PayLoadDTO();
+            payLoadDTO.put("Reccomondations books fetched successfully", bookService.getReccomondationsBooks());
+            return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
+        } catch (Exception e) {
+            throw e;
+        }
+    }
 
 }

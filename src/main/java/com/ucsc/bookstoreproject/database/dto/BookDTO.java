@@ -24,5 +24,9 @@ public class BookDTO {
     private String imageUrl;
     private Boolean isAvailable;
 
+    private Integer page;
+
+    private Integer size;
+
 
 }

@@ -40,8 +40,14 @@ public class SecurityConfiguration {
                         UsernamePasswordAuthenticationFilter.class
                 )
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/resources/**").permitAll()
+                        .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**").permitAll()
                         .requestMatchers("/api/v1/auth/login/**").permitAll()
                         .requestMatchers("/api/v1/createUser").permitAll()
+                        .requestMatchers("/api/v1/book/latest").permitAll()
+                        .requestMatchers("/api/v1/book/top").permitAll()
+                        .requestMatchers("/api/v1/book/recommendations").permitAll()
+                        .requestMatchers("/api/v1/book/search").permitAll()
                         .anyRequest().authenticated())
                 .exceptionHandling(ex -> ex.authenticationEntryPoint(point))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));

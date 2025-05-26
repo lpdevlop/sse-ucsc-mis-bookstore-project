@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.stream.Collectors;
+
 @RestController
 @RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
@@ -33,7 +35,7 @@ public class AuthController {
         try {
             Authentication auth = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginDTO.getUsername(), loginDTO.getPassword()));
             UserDetails user = (UserDetails) auth.getPrincipal();
-            String token = jwtHelper.generateToken(user.getUsername(),user.getPassword());
+            String token = jwtHelper.generateToken(user.getUsername(),user.getPassword(),user.getAuthorities().stream().collect(Collectors.toList()).get(0).getAuthority());
             return ResponseEntity.ok(new TokenResponseDTO(token));
         } catch (Exception e) {
             return ResponseEntity.status(500).body(null);

@@ -47,9 +47,10 @@ public class JWTHelper {
         return privateKey;
     }
 
-    public String generateToken(String username,String email) {
+    public String generateToken(String username,String email,String role) {
         Map<String, Object> claims = new HashMap<>();
         claims.put("email", email);
+        claims.put("role", role);
 
         return Jwts.builder()
                 .setSubject(username)
