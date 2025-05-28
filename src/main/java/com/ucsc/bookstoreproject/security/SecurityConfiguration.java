@@ -43,6 +43,7 @@ public class SecurityConfiguration {
                         .requestMatchers("/resources/**").permitAll()
                         .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**").permitAll()
                         .requestMatchers("/api/v1/auth/login/**").permitAll()
+                        .requestMatchers(HttpMethod.POST,"/api/v1/user/create").permitAll()
                         .requestMatchers("/api/v1/createUser").permitAll()
                         .requestMatchers("/api/v1/book/latest").permitAll()
                         .requestMatchers("/api/v1/book/top").permitAll()

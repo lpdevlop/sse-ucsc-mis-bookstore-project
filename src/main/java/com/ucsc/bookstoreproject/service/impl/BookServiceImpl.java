@@ -79,7 +79,8 @@ public class BookServiceImpl implements BookService {
         }
 
         Pageable pageable = PageRequest.of(page, size, Sort.by("title").ascending());
-        return bookRepository.findAll(spec, pageable).stream().map(PaginatedResponseDTO::new).collect(Collectors.toList());
+         bookRepository.findAll(spec, pageable).stream().map(PaginatedResponseDTO::new).collect(Collectors.toList());
+         return null;
     }
 
     @Override

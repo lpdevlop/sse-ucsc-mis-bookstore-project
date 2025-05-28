@@ -89,6 +89,7 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
         path.equals("/api/v1/book/latest")
         ||
         path.equals("/api/v1/book/top") ||
+                path.equals("/api/v1/user/create") ||
 
                 path.equals("/api/v1/book/search") ||
 

@@ -42,8 +42,8 @@ public class DataLoader implements ApplicationRunner {
                 List<BookModel> roles = configurations.getPlaceholderModel().getBooks().stream().map(BookModel::new).toList();
                 bookDao.upsert(roles);
 
-                List<UserModel> users = configurations.getPlaceholderModel().getUsers().stream().map(UserModel::new).toList();
-                userDao.upsert(users);
+              /*  List<UserModel> users = configurations.getPlaceholderModel().getUsers().stream().map(UserModel::new).toList();
+                userDao.upsert(users);*/
 
                 log.info("Initial Data Insert Success");
             } catch (Exception e) {

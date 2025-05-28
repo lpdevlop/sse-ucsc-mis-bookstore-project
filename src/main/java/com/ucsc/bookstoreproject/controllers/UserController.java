@@ -20,7 +20,7 @@ public class UserController {
 
     private final UserService userService;
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<PayLoadDTO> registerUser(@RequestBody UserDTO userDTO) {
         PayLoadDTO payLoadDTO=new PayLoadDTO();
         payLoadDTO.put("User registered successfully", userService.registerUser(userDTO));
@@ -28,7 +28,7 @@ public class UserController {
     }
 
     @PreAuthorize("hasRole('SUPER_ADMIN')")
-    @PostMapping("l")
+    @PostMapping("/admin")
     public ResponseEntity<PayLoadDTO> registerAdminUser(@RequestBody UserDTO userDTO) {
         PayLoadDTO payLoadDTO=new PayLoadDTO();
         payLoadDTO.put("User registered successfully", userService.registerAdminUser(userDTO));
