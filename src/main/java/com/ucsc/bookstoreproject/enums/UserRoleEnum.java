@@ -1,13 +1,12 @@
 package com.ucsc.bookstoreproject.enums;
 
 public enum UserRoleEnum {
-    ROLE_CUSTOMER{
+    CUSTOMER{
 
     },
-    ROLE_ADMIN{
-
+    ADMIN{
     },
-    ROLE_SUPER_ADMIN{
+    SUPER_ADMIN{
 
     }
 }

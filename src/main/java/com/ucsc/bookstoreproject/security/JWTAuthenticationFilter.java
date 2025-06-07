@@ -1,5 +1,6 @@
 package com.ucsc.bookstoreproject.security;
 
+import com.ucsc.bookstoreproject.database.model.UserModel;
 import com.ucsc.bookstoreproject.utils.Constant;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.MalformedJwtException;
@@ -8,16 +9,11 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-
 import java.io.IOException;
 
 @Slf4j
@@ -28,13 +24,13 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
     private final JWTHelper jwtHelper;
 
 
-    private final UserDetailsService userDetailsService;
+    private final CustomUserDetailsService customUserDetailsService;
 
 
 
-    public JWTAuthenticationFilter(JWTHelper jwtHelper, UserDetailsService userDetailsService) {
+    public JWTAuthenticationFilter(JWTHelper jwtHelper, CustomUserDetailsService customUserDetailsService) {
         this.jwtHelper = jwtHelper;
-        this.userDetailsService = userDetailsService;
+        this.customUserDetailsService = customUserDetailsService;
     }
 
     @Override
@@ -56,7 +52,8 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
 
             if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
 
-                UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+                UserModel userDetails = customUserDetailsService.loadUserByUuid(username);
+
                 boolean validateToken = this.jwtHelper.validateToken(token, userDetails);
                 if (validateToken) {
                     UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
@@ -80,20 +77,17 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
-  @Override
-    protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
+    @Override
+    protected boolean shouldNotFilter(HttpServletRequest request) {
         String path = request.getServletPath();
-        return path.startsWith("/api/v1/auth/login") ||
+        return  path.startsWith("/api/v1/auth/login") ||
                 path.equals("/api/v1/createUser") ||
                 path.equals("/images/") ||
-        path.equals("/api/v1/book/latest")
-        ||
-        path.equals("/api/v1/book/top") ||
+                path.equals("/api/v1/book/latest") ||
+                path.equals("/api/v1/book/top") ||
                 path.equals("/api/v1/user/create") ||
-
                 path.equals("/api/v1/book/search") ||
-
-                path.equals("/api/v1/book/recommendations");
-
+                path.equals("/api/v1/book/recommendations") ||
+                path.equals("/api/v1/user/debug/roles");
     }
 }

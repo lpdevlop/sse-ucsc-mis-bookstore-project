@@ -6,13 +6,12 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.password.PasswordEncoder;
-
 import java.util.Collection;
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Table(name = "users")
@@ -26,6 +25,10 @@ public class UserModel implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long Id;
 
+
+    @Column(name = "uuid", unique = true, nullable = false, updatable = false)
+    private UUID uuid;
+
     @NotBlank(message = "first name is required")
     private String firstName;
 
@@ -37,12 +40,14 @@ public class UserModel implements UserDetails {
 
     @NotBlank(message = "Email is required")
     @Email(message = "Invalid email format")
+    @Column(unique = true, nullable = false)
     private String email;
 
     @NotBlank(message = "address is required")
     private String address;
 
     @NotBlank(message = "phone number is required")
+    @Column(unique = true, nullable = false)
     private String phoneNumber;
 
     @Enumerated(EnumType.STRING)
@@ -58,9 +63,33 @@ public class UserModel implements UserDetails {
 
     private boolean enabled ;
 
+    public UserModel(UserModel userModel) {
+        this.firstName = userModel.getFirstName();
+        this.lastName = userModel.getLastName();
+        this.password = userModel.getPassword();
+        this.email = userModel.getEmail();
+        this.address = userModel.getAddress();
+        this.phoneNumber = userModel.getPhoneNumber();
+        this.role = userModel.getRole();
+        this.accountNonExpired = true;
+        this.accountNonLocked = true;
+        this.credentialsNonExpired = true;
+        this.enabled = true;
+    }
+
+    @PrePersist
+    public void prePersist() {
+        if (this.uuid == null) {
+            this.uuid = UUID.randomUUID();
+        }
+    }
+
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of((GrantedAuthority) () -> role.name());
+        return List.of(new SimpleGrantedAuthority("ROLE_"+role.name()));
+
+
     }
 
     @Override
@@ -80,7 +109,7 @@ public class UserModel implements UserDetails {
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return accountNonExpired;
+        return credentialsNonExpired;
     }
 
     @Override

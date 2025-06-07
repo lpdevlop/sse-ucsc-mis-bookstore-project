@@ -3,15 +3,13 @@ package com.ucsc.bookstoreproject.controllers;
 
 import com.ucsc.bookstoreproject.database.dto.PayLoadDTO;
 import com.ucsc.bookstoreproject.database.dto.UserDTO;
+import com.ucsc.bookstoreproject.database.dto.user.UserPayloadDTO;
 import com.ucsc.bookstoreproject.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/user")
@@ -34,6 +32,16 @@ public class UserController {
         payLoadDTO.put("User registered successfully", userService.registerAdminUser(userDTO));
         return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
     }
+
+
+    @PreAuthorize("hasAnyRole('SUPER_ADMIN','ADMIN','CUSTOMER') and  #userDTO.id == authentication.principal.uuid")
+    @PostMapping
+    public ResponseEntity<PayLoadDTO> getUserProfile(@RequestBody UserPayloadDTO userDTO) {
+        PayLoadDTO payLoadDTO = new PayLoadDTO();
+        payLoadDTO.put("User profile", userService.getUserProfile(userDTO));
+        return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
+    }
+
 
 
 }

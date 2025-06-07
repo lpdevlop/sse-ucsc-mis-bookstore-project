@@ -4,5 +4,5 @@ public class Constant {
 
 
     public static final String AUTHORIZATION = "authorization";
-    public static final String BEARER = "bearer";
+    public static final String BEARER = "Bearer";
 }

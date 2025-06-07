@@ -11,15 +11,14 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.security.SignatureException;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @Component
 public class JWTHelper {
@@ -47,25 +46,22 @@ public class JWTHelper {
         return privateKey;
     }
 
-    public String generateToken(String username,String email,String role) {
-        Map<String, Object> claims = new HashMap<>();
-        claims.put("email", email);
-        claims.put("role", role);
+    public String generateToken(UUID uuid, List<String> role) {
 
         return Jwts.builder()
-                .setSubject(username)
-                .setClaims(claims)
+                .setSubject(uuid.toString())
+                .claim("authorities", role)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + 864_000_00)) // 1 day
                 .signWith(getPrivateKey(), SignatureAlgorithm.RS256)
                 .compact();
     }
 
-    public boolean validateToken(String token, UserDetails userDetails) {
+    public boolean validateToken(String token, UserModel userDetails) {
         try {
             Jwts.parserBuilder()
                     .setSigningKey(getPublicKey())
-                    .requireSubject(userDetails.getUsername())
+                    .requireSubject(userDetails.getUuid().toString())
                     .build()
                     .parseClaimsJws(token);
             return true;
