@@ -113,6 +113,7 @@ public class UserServiceImpl implements UserService {
                         responseDTO.setEmail(userModel.getEmail());
                         responseDTO.setLastName(userModel.getLastName());
                         responseDTO.setFirstName(userModel.getFirstName());
+                        responseDTO.setRole(userModel.getRole().name());
                         return responseDTO;
                     })
                     .orElseThrow(() -> new CustomException("User not found with ID: ",HttpStatus.BAD_REQUEST));

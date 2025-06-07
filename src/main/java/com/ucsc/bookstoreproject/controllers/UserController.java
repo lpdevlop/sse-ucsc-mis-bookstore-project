@@ -38,7 +38,7 @@ public class UserController {
     @PostMapping
     public ResponseEntity<PayLoadDTO> getUserProfile(@RequestBody UserPayloadDTO userDTO) {
         PayLoadDTO payLoadDTO = new PayLoadDTO();
-        payLoadDTO.put("User profile", userService.getUserProfile(userDTO));
+        payLoadDTO.put("userprofile", userService.getUserProfile(userDTO));
         return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
     }
 
