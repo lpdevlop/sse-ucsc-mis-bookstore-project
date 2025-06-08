@@ -1,13 +1,18 @@
 package com.ucsc.bookstoreproject.database.dto;
 
+import com.ucsc.bookstoreproject.database.model.BookModel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 @Getter
 @Setter
+@NoArgsConstructor
 public class BookDTO {
 
 
     private Long id;
+
+    private Boolean active;
     private String title;
     private String author;
     private String isbn;
@@ -27,6 +32,25 @@ public class BookDTO {
     private Integer page;
 
     private Integer size;
+
+    public BookDTO(BookModel bookModel){
+        this.id = bookModel.getId();
+        this.title = bookModel.getTitle();
+        this.author = bookModel.getAuthor();
+        this.isbn = bookModel.getIsbn();
+        this.publisher = bookModel.getPublisher();
+        this.publicationDate = bookModel.getPublicationDate();
+        this.price = bookModel.getPrice();
+        this.language = bookModel.getLanguage();
+        this.genre = bookModel.getGenre();
+        this.stockQuantity = bookModel.getStockQuantity();
+        this.description = bookModel.getDescription();
+        this.averageRating = bookModel.getAverageRating();
+        this.pageCount = bookModel.getPageCount();
+        this.format = bookModel.getFormat();
+        this.imageUrl = bookModel.getImageUrl();
+        this.isAvailable = bookModel.getIsAvailable();
+    }
 
 
 }

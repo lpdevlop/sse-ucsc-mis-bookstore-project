@@ -15,4 +15,8 @@ public interface BookService {
     Object getTopSellingBooks();
 
     Object getReccomondationsBooks();
+
+    Object searchBooksByIsbn(String isbn);
+
+    Boolean deactivateBook(Long isbn);
 }

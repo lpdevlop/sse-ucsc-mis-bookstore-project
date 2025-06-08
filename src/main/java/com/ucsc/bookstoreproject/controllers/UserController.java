@@ -11,6 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Objects;
+
 @RestController
 @RequestMapping("/api/v1/user")
 @RequiredArgsConstructor
@@ -21,7 +23,8 @@ public class UserController {
     @PostMapping("/create")
     public ResponseEntity<PayLoadDTO> registerUser(@RequestBody UserDTO userDTO) {
         PayLoadDTO payLoadDTO=new PayLoadDTO();
-        payLoadDTO.put("User registered successfully", userService.registerUser(userDTO));
+        userService.registerUser(userDTO);
+        payLoadDTO.put("User registered successfully",true);
         return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
     }
 
@@ -29,7 +32,10 @@ public class UserController {
     @PostMapping("/admin")
     public ResponseEntity<PayLoadDTO> registerAdminUser(@RequestBody UserDTO userDTO) {
         PayLoadDTO payLoadDTO=new PayLoadDTO();
-        payLoadDTO.put("User registered successfully", userService.registerAdminUser(userDTO));
+        long adminUser=userService.registerAdminUser(userDTO);
+        if(Objects.nonNull(adminUser)) {
+            payLoadDTO.put("User registered successfully",true);
+        }
         return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
     }
 

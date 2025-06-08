@@ -18,11 +18,12 @@ public class BookController {
     private final BookService bookService;
 
     @PreAuthorize("hasRole('ADMIN')")
-    private ResponseEntity<PayLoadDTO> addBooks(@RequestBody BookDTO bookDTO){
+    @PostMapping
+    public ResponseEntity<PayLoadDTO> addBooks(@RequestBody BookDTO bookDTO){
 
         try {
             PayLoadDTO payLoadDTO=new PayLoadDTO();
-            payLoadDTO.put("Book added successfully", bookService.addBooks(bookDTO));
+            payLoadDTO.put("Book added successfully",bookService.addBooks(bookDTO));
             return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
         }catch (Exception e){
             throw e;
@@ -51,6 +52,18 @@ public class BookController {
         }
     }
 
+    @GetMapping("/isbn/{isbn}")
+    public ResponseEntity<PayLoadDTO> searchBooksByIsbn(@PathVariable String isbn) {
+        try {
+            PayLoadDTO payLoadDTO = new PayLoadDTO();
+            payLoadDTO.put("book_searched_successfully", bookService.searchBooksByIsbn(isbn));
+            return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+
+
 
     @GetMapping("/latest")
     public ResponseEntity<PayLoadDTO> getLatestBooks() {
@@ -78,6 +91,18 @@ public class BookController {
         try {
             PayLoadDTO payLoadDTO = new PayLoadDTO();
             payLoadDTO.put("Reccomondations books fetched successfully", bookService.getReccomondationsBooks());
+            return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @PutMapping("{id}/status")
+    public ResponseEntity<PayLoadDTO> deactivateBook(@PathVariable long id) {
+        try {
+            PayLoadDTO payLoadDTO = new PayLoadDTO();
+            payLoadDTO.put("Book deactivated successfully", bookService.deactivateBook(id));
             return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
         } catch (Exception e) {
             throw e;

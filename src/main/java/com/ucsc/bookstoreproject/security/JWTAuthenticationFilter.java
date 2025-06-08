@@ -81,13 +81,12 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
     protected boolean shouldNotFilter(HttpServletRequest request) {
         String path = request.getServletPath();
         return  path.startsWith("/api/v1/auth/login") ||
-                path.equals("/api/v1/createUser") ||
                 path.equals("/images/") ||
                 path.equals("/api/v1/book/latest") ||
                 path.equals("/api/v1/book/top") ||
                 path.equals("/api/v1/user/create") ||
                 path.equals("/api/v1/book/search") ||
                 path.equals("/api/v1/book/recommendations") ||
-                path.equals("/api/v1/user/debug/roles");
+                path.startsWith("/api/v1/book/isbn");
     }
 }
