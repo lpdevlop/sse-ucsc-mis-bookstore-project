@@ -8,6 +8,7 @@ import com.ucsc.bookstoreproject.database.repository.BookRepository;
 import com.ucsc.bookstoreproject.exceptions.CustomException;
 import com.ucsc.bookstoreproject.service.BookService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -66,28 +67,37 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public PaginatedResponseDTO searchBooks(String title, String author, String isbn, String description, int page, int size) {
-        Specification<BookModel> spec = Specification.where(null);
+    public  PaginatedResponseDTO searchBooks(String title, String author, String isbn, String description, int page, int size) {
+        Specification<BookModel> spec = (root, query, cb) -> cb.conjunction();
 
         if (title != null && !title.isBlank()) {
             spec = spec.and(BookSpecification.hasTitle(title));
         }
-
         if (author != null && !author.isBlank()) {
             spec = spec.and(BookSpecification.hasAuthor(author));
         }
-
         if (isbn != null && !isbn.isBlank()) {
             spec = spec.and(BookSpecification.hasIsbn(isbn));
         }
-
         if (description != null && !description.isBlank()) {
             spec = spec.and(BookSpecification.hasDescription(description));
         }
 
         Pageable pageable = PageRequest.of(page, size, Sort.by("title").ascending());
-         bookRepository.findAll(spec, pageable).stream().map(PaginatedResponseDTO::new).collect(Collectors.toList());
-         return null;
+        Page<BookModel> resultPage = bookRepository.findAll(spec,pageable);
+
+        List<BookDTO> dtos = resultPage.getContent()
+                .stream()
+                .map(BookDTO::new)
+                .collect(Collectors.toList());
+
+        return new PaginatedResponseDTO<>(
+                dtos,
+                resultPage.getNumber(),
+                resultPage.getSize(),
+                resultPage.getTotalElements(),
+                resultPage.getTotalPages()
+        );
     }
 
     @Override

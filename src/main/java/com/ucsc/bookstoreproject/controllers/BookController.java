@@ -45,7 +45,7 @@ public class BookController {
     public ResponseEntity<PayLoadDTO> searchBooks(@RequestBody BookDTO bookDTO) {
         try {
             PayLoadDTO payLoadDTO = new PayLoadDTO();
-            payLoadDTO.put("Book searched successfully", bookService.searchBooks(bookDTO.getTitle(),bookDTO.getAuthor(),bookDTO.getIsbn(),bookDTO.getDescription(),bookDTO.getPage(),bookDTO.getSize()));
+            payLoadDTO.put("book_searched_successfully", bookService.searchBooks(bookDTO.getTitle(),bookDTO.getAuthor(),bookDTO.getIsbn(),bookDTO.getDescription(),bookDTO.getPage(),bookDTO.getSize()));
             return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
         } catch (Exception e) {
             throw e;

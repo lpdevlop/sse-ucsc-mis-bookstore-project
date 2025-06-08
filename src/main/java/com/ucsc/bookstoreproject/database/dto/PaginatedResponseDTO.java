@@ -19,4 +19,14 @@ public class PaginatedResponseDTO<T>{
     public PaginatedResponseDTO(BookModel bookModel) {
 
     }
+
+
+    public PaginatedResponseDTO(List<T> content, int number, int size, long totalElements, int totalPages) {
+        this.content = content;
+        this.page = number;
+        this.size = size;
+        this.totalElements = totalElements;
+        this.totalPages = totalPages;
+        this.last = (number == totalPages - 1);
+    }
 }

@@ -6,7 +6,7 @@ import org.springframework.data.jpa.domain.Specification;
 public class BookSpecification {
 
     public static Specification<BookModel> hasTitle(String title){
-        return (root,query,criteriaBuilder) -> criteriaBuilder.like(criteriaBuilder.lower(root.get("title")), "%" + title + "%");
+        return (root,query,criteriaBuilder) -> criteriaBuilder.like(criteriaBuilder.lower(root.get("title")), "%" + title.toLowerCase() + "%");
     }
 
     public static Specification<BookModel> hasAuthor(String author){
@@ -18,6 +18,7 @@ public class BookSpecification {
     }
 
     public static Specification<BookModel> hasDescription(String description){
-        return ((root, query, criteriaBuilder) -> criteriaBuilder.like(root.join("description"), description));
+        return (root, query, cb) ->
+                cb.like(cb.lower(root.get("description")), "%" + description.toLowerCase() + "%");
     }
 }
