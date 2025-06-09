@@ -16,6 +16,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -102,17 +103,22 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Object getLatestBooks() {
-        return bookRepository.findAll();
+        return bookRepository.findAll().stream()
+                .filter(BookModel::getActive)
+                .sorted(Comparator.comparing(BookModel::getTitle))
+                .limit(10)
+                .collect(Collectors.toList());
+
     }
 
     @Override
     public Object getTopSellingBooks() {
-        return bookRepository.findAll();
+        return bookRepository.findAll().stream().filter(k->k.getActive().equals(true)).limit(4).collect(Collectors.toList());
     }
 
     @Override
     public Object getReccomondationsBooks() {
-        return bookRepository.findAll();
+        return bookRepository.findAll().stream().filter(k->k.getActive().equals(true)).limit(10).collect(Collectors.toList());
     }
 
     @Override

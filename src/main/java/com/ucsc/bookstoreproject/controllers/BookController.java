@@ -79,7 +79,7 @@ public class BookController {
     public ResponseEntity<PayLoadDTO> getTopSellingBooks() {
         try {
             PayLoadDTO payLoadDTO = new PayLoadDTO();
-            payLoadDTO.put("Top selling books fetched successfully", bookService.getTopSellingBooks());
+            payLoadDTO.put("top_selling_books_fetched_successfully", bookService.getTopSellingBooks());
             return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
         } catch (Exception e) {
             throw e;
@@ -90,7 +90,7 @@ public class BookController {
     public ResponseEntity<PayLoadDTO> getReccomondationsBooks() {
         try {
             PayLoadDTO payLoadDTO = new PayLoadDTO();
-            payLoadDTO.put("Reccomondations books fetched successfully", bookService.getReccomondationsBooks());
+            payLoadDTO.put("recommendations_books_fetched_successfully", bookService.getReccomondationsBooks());
             return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
         } catch (Exception e) {
             throw e;

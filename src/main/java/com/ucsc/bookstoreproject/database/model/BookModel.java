@@ -31,7 +31,7 @@ public class BookModel {
 
     private String publicationDate;
 
-    private Long price;
+    private Double price;
 
     private String language;
 
@@ -58,6 +58,7 @@ public class BookModel {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
+
     public BookModel() {
     }
 
@@ -65,6 +66,8 @@ public class BookModel {
         this.title = bookDTO.getTitle();
         this.author = bookDTO.getAuthor();
         this.isbn = bookDTO.getIsbn();
+        this.price=bookDTO.getPrice();
+        this.active=bookDTO.getActive();
         this.publisher = bookDTO.getPublisher();
         this.language = bookDTO.getLanguage();
         this.genre = bookDTO.getGenre();

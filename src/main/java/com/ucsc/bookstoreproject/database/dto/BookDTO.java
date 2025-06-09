@@ -9,6 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class BookDTO {
 
+    private Integer orderQuantity;
 
     private Long id;
 
@@ -18,7 +19,7 @@ public class BookDTO {
     private String isbn;
     private String publisher;
     private String publicationDate;
-    private Long price;
+    private Double price;
     private String language;
     private String genre;
     private Integer stockQuantity;

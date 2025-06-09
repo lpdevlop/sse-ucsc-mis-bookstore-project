@@ -16,7 +16,9 @@
       "pageCount": 1390,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book1.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
+
     },
     {
       "id": 2,
@@ -34,7 +36,8 @@
       "pageCount": 1041,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book2.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 3,
@@ -52,7 +55,8 @@
       "pageCount": 303,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book3.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 4,
@@ -70,7 +74,8 @@
       "pageCount": 255,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book4.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 5,
@@ -88,7 +93,8 @@
       "pageCount": 407,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book5.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 6,
@@ -106,7 +112,8 @@
       "pageCount": 1481,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book6.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 7,
@@ -124,7 +131,8 @@
       "pageCount": 911,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book7.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 8,
@@ -142,7 +150,8 @@
       "pageCount": 1086,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book8.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 9,
@@ -160,7 +169,8 @@
       "pageCount": 1148,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book9.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 10,
@@ -178,7 +188,8 @@
       "pageCount": 422,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book10.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 11,
@@ -196,7 +207,8 @@
       "pageCount": 981,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book11.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 12,
@@ -214,7 +226,8 @@
       "pageCount": 352,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book12.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 13,
@@ -232,7 +245,8 @@
       "pageCount": 1037,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book13.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 14,
@@ -250,7 +264,8 @@
       "pageCount": 1033,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book14.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 15,
@@ -268,7 +283,8 @@
       "pageCount": 1488,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book15.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 16,
@@ -286,7 +302,8 @@
       "pageCount": 999,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book16.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 17,
@@ -304,7 +321,8 @@
       "pageCount": 859,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book17.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 18,
@@ -322,7 +340,8 @@
       "pageCount": 262,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book18.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 19,
@@ -340,7 +359,8 @@
       "pageCount": 1000,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book19.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 20,
@@ -358,7 +378,8 @@
       "pageCount": 330,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book20.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 21,
@@ -376,7 +397,8 @@
       "pageCount": 664,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book21.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 22,
@@ -394,7 +416,8 @@
       "pageCount": 942,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book22.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 23,
@@ -412,7 +435,8 @@
       "pageCount": 337,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book23.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 24,
@@ -430,7 +454,8 @@
       "pageCount": 1439,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book24.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 25,
@@ -448,7 +473,8 @@
       "pageCount": 216,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book25.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 26,
@@ -466,7 +492,8 @@
       "pageCount": 463,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book26.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 27,
@@ -484,7 +511,8 @@
       "pageCount": 577,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book27.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 28,
@@ -502,7 +530,8 @@
       "pageCount": 1315,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book28.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 29,
@@ -520,7 +549,8 @@
       "pageCount": 1415,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book29.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 30,
@@ -538,7 +568,8 @@
       "pageCount": 321,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book30.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 31,
@@ -556,7 +587,8 @@
       "pageCount": 590,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book31.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 32,
@@ -574,7 +606,8 @@
       "pageCount": 439,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book32.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 33,
@@ -592,7 +625,8 @@
       "pageCount": 1132,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book33.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 34,
@@ -610,7 +644,8 @@
       "pageCount": 1404,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book34.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 35,
@@ -628,7 +663,8 @@
       "pageCount": 1196,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book35.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 36,
@@ -646,7 +682,8 @@
       "pageCount": 1317,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book36.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 37,
@@ -664,7 +701,8 @@
       "pageCount": 652,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book37.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 38,
@@ -682,7 +720,8 @@
       "pageCount": 932,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book38.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 39,
@@ -700,7 +739,8 @@
       "pageCount": 1415,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book39.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 40,
@@ -718,7 +758,8 @@
       "pageCount": 808,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book40.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 41,
@@ -736,7 +777,8 @@
       "pageCount": 835,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book41.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 42,
@@ -754,7 +796,8 @@
       "pageCount": 971,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book42.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 43,
@@ -772,7 +815,8 @@
       "pageCount": 1198,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book43.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 44,
@@ -790,7 +834,8 @@
       "pageCount": 505,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book44.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 45,
@@ -808,7 +853,8 @@
       "pageCount": 1064,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book45.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 46,
@@ -826,7 +872,8 @@
       "pageCount": 1029,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book46.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 47,
@@ -844,7 +891,8 @@
       "pageCount": 865,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book47.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 48,
@@ -862,7 +910,8 @@
       "pageCount": 770,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book48.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 49,
@@ -880,7 +929,8 @@
       "pageCount": 213,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book49.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 50,
@@ -898,7 +948,8 @@
       "pageCount": 1007,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book50.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 51,
@@ -916,7 +967,8 @@
       "pageCount": 1366,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book51.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 52,
@@ -934,7 +986,8 @@
       "pageCount": 760,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book52.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 53,
@@ -952,7 +1005,8 @@
       "pageCount": 527,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book53.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 54,
@@ -970,7 +1024,8 @@
       "pageCount": 771,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book54.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 55,
@@ -988,7 +1043,8 @@
       "pageCount": 1335,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book55.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 56,
@@ -1006,7 +1062,8 @@
       "pageCount": 435,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book56.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 57,
@@ -1024,7 +1081,8 @@
       "pageCount": 1466,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book57.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 58,
@@ -1042,7 +1100,8 @@
       "pageCount": 846,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book58.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 59,
@@ -1060,7 +1119,8 @@
       "pageCount": 1429,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book59.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 60,
@@ -1078,7 +1138,8 @@
       "pageCount": 279,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book60.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 61,
@@ -1096,7 +1157,8 @@
       "pageCount": 690,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book61.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 62,
@@ -1114,7 +1176,8 @@
       "pageCount": 456,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book62.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 63,
@@ -1132,7 +1195,8 @@
       "pageCount": 1224,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book63.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 64,
@@ -1150,7 +1214,8 @@
       "pageCount": 1460,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book64.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 65,
@@ -1168,7 +1233,8 @@
       "pageCount": 1258,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book65.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 66,
@@ -1186,7 +1252,8 @@
       "pageCount": 1217,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book66.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 67,
@@ -1204,7 +1271,8 @@
       "pageCount": 1327,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book67.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 68,
@@ -1222,7 +1290,8 @@
       "pageCount": 339,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book68.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 69,
@@ -1240,7 +1309,8 @@
       "pageCount": 1177,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book69.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 70,
@@ -1258,7 +1328,8 @@
       "pageCount": 1416,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book70.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 71,
@@ -1276,7 +1347,8 @@
       "pageCount": 1405,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book71.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 72,
@@ -1294,7 +1366,8 @@
       "pageCount": 219,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book72.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 73,
@@ -1312,7 +1385,8 @@
       "pageCount": 833,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book73.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 74,
@@ -1330,7 +1404,8 @@
       "pageCount": 1240,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book74.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 75,
@@ -1348,7 +1423,8 @@
       "pageCount": 504,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book75.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 76,
@@ -1366,7 +1442,8 @@
       "pageCount": 381,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book76.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 77,
@@ -1384,7 +1461,8 @@
       "pageCount": 903,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book77.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 78,
@@ -1402,7 +1480,8 @@
       "pageCount": 314,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book78.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 79,
@@ -1420,7 +1499,8 @@
       "pageCount": 1436,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book79.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 80,
@@ -1438,7 +1518,8 @@
       "pageCount": 361,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book80.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 81,
@@ -1456,7 +1537,8 @@
       "pageCount": 609,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book81.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 82,
@@ -1474,7 +1556,8 @@
       "pageCount": 1343,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book82.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 83,
@@ -1492,7 +1575,8 @@
       "pageCount": 730,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book83.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 84,
@@ -1510,7 +1594,8 @@
       "pageCount": 1428,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book84.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 85,
@@ -1528,7 +1613,8 @@
       "pageCount": 708,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book85.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 86,
@@ -1546,7 +1632,8 @@
       "pageCount": 521,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book86.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 87,
@@ -1564,7 +1651,8 @@
       "pageCount": 872,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book87.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 88,
@@ -1582,7 +1670,8 @@
       "pageCount": 1254,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book88.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 89,
@@ -1600,7 +1689,8 @@
       "pageCount": 304,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book89.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 90,
@@ -1618,7 +1708,8 @@
       "pageCount": 1452,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book90.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 91,
@@ -1636,7 +1727,8 @@
       "pageCount": 673,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book91.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 92,
@@ -1654,7 +1746,8 @@
       "pageCount": 1482,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book92.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 93,
@@ -1672,7 +1765,8 @@
       "pageCount": 579,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book93.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 94,
@@ -1690,7 +1784,8 @@
       "pageCount": 626,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book94.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 95,
@@ -1708,7 +1803,8 @@
       "pageCount": 286,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book95.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 96,
@@ -1726,7 +1822,8 @@
       "pageCount": 1429,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book96.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 97,
@@ -1744,7 +1841,8 @@
       "pageCount": 1334,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book97.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 98,
@@ -1762,7 +1860,8 @@
       "pageCount": 272,
       "format": "eBook",
       "imageUrl": "https://example.com/images/book98.jpg",
-      "isAvailable": true
+      "isAvailable": true,
+      "active": true
     },
     {
       "id": 99,
@@ -1780,7 +1879,8 @@
       "pageCount": 570,
       "format": "Paperback",
       "imageUrl": "https://example.com/images/book99.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     },
     {
       "id": 100,
@@ -1798,7 +1898,8 @@
       "pageCount": 1064,
       "format": "Hardcover",
       "imageUrl": "https://example.com/images/book100.jpg",
-      "isAvailable": false
+      "isAvailable": false,
+      "active": true
     }
   ],
 
@@ -1806,7 +1907,7 @@
     {
       "firstName": "Alice",
       "lastName": "Johnson",
-      "password": "$2a$12$0X44bTEiT0d/kGhKXV7lXOwgI87XXNm5s5.HNR1V53bW5dw.2dlDG",
+      "password": "$2a$10$U6X67D/D/6loWd/dUqTj4.ghHgcSWuDY.BcRtRrz8E1AJFes3CX8a",
       "email": "alice.johnson@example.com",
       "address": "123 Main Street, Springfield",
       "phoneNumber": "1234567890",
@@ -1819,7 +1920,7 @@
     {
       "firstName": "Bob",
       "lastName": "Smith",
-      "password": "$2a$12$0X44bTEiT0d/kGhKXV7lXOwgI87XXNm5s5.HNR1V53bW5dw.2dlDG",
+      "password": "$2a$10$U6X67D/D/6loWd/dUqTj4.ghHgcSWuDY.BcRtRrz8E1AJFes3CX8a",
       "email": "bob.smith@example.com",
       "address": "456 Elm Street, Shelbyville",
       "phoneNumber": "0987654321",
