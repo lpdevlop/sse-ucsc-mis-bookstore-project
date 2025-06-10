@@ -5,9 +5,11 @@ import com.ucsc.bookstoreproject.database.dto.OrderDTO;
 import com.ucsc.bookstoreproject.database.model.BookModel;
 import com.ucsc.bookstoreproject.database.model.OrderItemModel;
 import com.ucsc.bookstoreproject.database.model.OrderModel;
+import com.ucsc.bookstoreproject.database.model.UserModel;
 import com.ucsc.bookstoreproject.database.repository.BookRepository;
 import com.ucsc.bookstoreproject.database.repository.OrderRepository;
 import com.ucsc.bookstoreproject.service.OrderService;
+import com.ucsc.bookstoreproject.utils.SecurityUtil;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.aspectj.weaver.ast.Or;
@@ -67,5 +69,16 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Object searchOrderById() {
         return null;
+    }
+
+    @Override
+    public Object getMyOrders() {
+       UserModel currentUser =SecurityUtil.getCurrentUser();
+       return orderRepository.findOrderByUserId(currentUser.getId()).stream().map(OrderDTO::new).toList();
+    }
+
+    @Override
+    public Object getAllOrders() {
+        return orderRepository.findAll().stream().map(OrderDTO::new).toList();
     }
 }

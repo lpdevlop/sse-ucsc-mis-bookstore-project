@@ -3,12 +3,9 @@ package com.ucsc.bookstoreproject.database.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.apache.tomcat.util.http.parser.HttpParser;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import org.springframework.http.HttpStatus;
-
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;

@@ -6,4 +6,8 @@ public interface OrderService {
     Object createOrder(OrderDTO orderDTO);
 
     Object searchOrderById();
+
+    Object getMyOrders();
+
+    Object getAllOrders();
 }
