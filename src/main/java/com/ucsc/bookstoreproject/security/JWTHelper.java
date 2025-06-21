@@ -52,7 +52,7 @@ public class JWTHelper {
                 .setSubject(uuid.toString())
                 .claim("authorities", role)
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + 864_000_00)) // 1 day
+                .setExpiration(new Date(System.currentTimeMillis() + 10 * 60 * 1000)) // 10 minutes
                 .signWith(getPrivateKey(), SignatureAlgorithm.RS256)
                 .compact();
     }

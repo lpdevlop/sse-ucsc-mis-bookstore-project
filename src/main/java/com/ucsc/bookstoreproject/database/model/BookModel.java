@@ -17,6 +17,7 @@ import java.time.LocalDateTime;
 public class BookModel {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private Boolean active;

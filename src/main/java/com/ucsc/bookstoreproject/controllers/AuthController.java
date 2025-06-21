@@ -4,8 +4,12 @@ package com.ucsc.bookstoreproject.controllers;
 import com.ucsc.bookstoreproject.database.dto.PayLoadDTO;
 import com.ucsc.bookstoreproject.database.dto.TokenResponseDTO;
 import com.ucsc.bookstoreproject.database.dto.login.LoginDTO;
+import com.ucsc.bookstoreproject.database.filters.LoginAttemptFilter;
+import com.ucsc.bookstoreproject.database.filters.LoginRateLimitInterceptor;
 import com.ucsc.bookstoreproject.database.model.UserModel;
 import com.ucsc.bookstoreproject.security.JWTHelper;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -32,27 +36,36 @@ public class AuthController {
 
     private final JWTHelper jwtHelper;
 
+    private final LoginAttemptFilter loginAttemptFilter;
+
     @Autowired
     private AuthenticationManager authenticationManager;
 
 
     @PostMapping("/login")
-    public ResponseEntity<PayLoadDTO> login(@RequestBody LoginDTO loginDTO) {
+    public ResponseEntity<PayLoadDTO> login(@Valid @RequestBody LoginDTO loginDTO, HttpServletRequest httpRequest) {
+        String ip =loginAttemptFilter.getClientIP(httpRequest);
         try {
+            PayLoadDTO payLoadDTO = new PayLoadDTO();
+            if (loginAttemptFilter.isBlocked(ip)) {
+                payLoadDTO.put("data", "Invalid email or password,Please try again later");
+            }
             Authentication auth = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginDTO.getEmail(), loginDTO.getPassword()));
             UserModel userModel = (UserModel) auth.getPrincipal();
             String token = jwtHelper.generateToken(userModel.getUuid(),userModel.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList()));
-            PayLoadDTO payLoadDTO = new PayLoadDTO();
             if(Objects.nonNull(token)) {
+                loginAttemptFilter.loginSucceeded(ip);
                 payLoadDTO.put("data", new TokenResponseDTO(token));
                 payLoadDTO.setStatus("200");
             }else {
-                payLoadDTO.put("data",null);
+                loginAttemptFilter.loginFailed(ip);
+                payLoadDTO.put("data","Invalid email or password,Please try again later");
                 payLoadDTO.setStatus("401");
             }
-            return ResponseEntity.ok(payLoadDTO);
+            return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
         } catch (Exception e) {
             PayLoadDTO payLoadDTO=new PayLoadDTO();
+            loginAttemptFilter.loginFailed(ip);
             payLoadDTO.setData("Invalid email or password. Please try again");
             return ResponseEntity.status(500).body(payLoadDTO);
         }

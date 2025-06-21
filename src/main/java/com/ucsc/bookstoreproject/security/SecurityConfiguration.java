@@ -58,6 +58,7 @@ public class SecurityConfiguration {
         http.csrf(AbstractHttpConfigurer::disable)
                 .cors(withDefaults())
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/api/v1/book/{id}/status").hasRole("ADMIN")
                         .requestMatchers("/resources/static/**").permitAll()
                         .requestMatchers("/resources/**").permitAll()
                         .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**").permitAll()

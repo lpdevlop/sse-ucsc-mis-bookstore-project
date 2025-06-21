@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
+import java.nio.file.Paths;
 
 @RestController
 public class ImageController {
@@ -16,10 +17,14 @@ public class ImageController {
 
     @GetMapping(value = "/images/{imageName:.+}", produces = {MediaType.IMAGE_JPEG_VALUE, MediaType.IMAGE_PNG_VALUE})
     public void getImage(@PathVariable String imageName, HttpServletResponse response) throws IOException {
-        ClassPathResource imgFile = new ClassPathResource("static/images/" + imageName);
+        String safeImageName = Paths.get(imageName).getFileName().toString();
+        ClassPathResource imgFile = new ClassPathResource("static/images/" + safeImageName);
         if (imgFile.exists()) {
             String contentType = imageName.endsWith(".png") ? MediaType.IMAGE_PNG_VALUE : MediaType.IMAGE_JPEG_VALUE;
             response.setContentType(contentType);
+            response.setHeader("X-Content-Type-Options", "nosniff");
+            response.setHeader("X-Frame-Options", "DENY");
+            response.setHeader("Cache-Control", "no-store, must-revalidate");
             StreamUtils.copy(imgFile.getInputStream(), response.getOutputStream());
         } else {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);

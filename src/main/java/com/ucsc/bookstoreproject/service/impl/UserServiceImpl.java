@@ -65,9 +65,7 @@ public class UserServiceImpl implements UserService {
         if(userModel.isPresent()){
             userModel1.setId(userDTO.getId());
             userModel1.setRole(UserRoleEnum.ADMIN);
-
-            userModel1.setFirstName(UUID.randomUUID().toString());
-            userModel1.setLastName(UUID.randomUUID().toString());
+            userModel1.setFirstName("ADMIN");
             userModel1.setEmail(userDTO.getEmail());
             userModel1.setPassword(passwordEncoder.encode(userDTO.getPassword()));
             userModel1.setAddress(UUID.randomUUID().toString());

@@ -42,7 +42,6 @@ public class BookServiceImpl implements BookService {
                 throw new CustomException("Book cannot be null", HttpStatus.NOT_FOUND);
             }
         }
-
             bookModel1.setTitle(bookDTO.getTitle());
             bookModel1.setAuthor(bookDTO.getAuthor());
             bookModel1.setIsbn(bookDTO.getIsbn());

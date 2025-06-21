@@ -3,7 +3,6 @@ package com.ucsc.bookstoreproject.controllers;
 import com.ucsc.bookstoreproject.database.dto.OrderDTO;
 import com.ucsc.bookstoreproject.database.dto.PayLoadDTO;
 import com.ucsc.bookstoreproject.service.OrderService;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 public class OrderController {
 
     private final OrderService orderService;
-
 
     @PreAuthorize("hasRole('CUSTOMER')")
     @PostMapping

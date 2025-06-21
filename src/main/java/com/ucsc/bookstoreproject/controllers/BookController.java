@@ -4,6 +4,7 @@ package com.ucsc.bookstoreproject.controllers;
 import com.ucsc.bookstoreproject.database.dto.BookDTO;
 import com.ucsc.bookstoreproject.database.dto.PayLoadDTO;
 import com.ucsc.bookstoreproject.service.BookService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +20,7 @@ public class BookController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
-    public ResponseEntity<PayLoadDTO> addBooks(@RequestBody BookDTO bookDTO){
+    public ResponseEntity<PayLoadDTO> addBooks(@Valid @RequestBody BookDTO bookDTO){
 
         try {
             PayLoadDTO payLoadDTO=new PayLoadDTO();
@@ -31,7 +32,7 @@ public class BookController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<PayLoadDTO> deletebooks(@RequestBody BookDTO bookDTO){
+    public ResponseEntity<PayLoadDTO> deleteBooks(@RequestBody BookDTO bookDTO){
         try {
             PayLoadDTO payLoadDTO=new PayLoadDTO();
             payLoadDTO.put("Book deleted successfully", bookService.deleteBooks(bookDTO));
@@ -87,7 +88,7 @@ public class BookController {
     }
 
     @GetMapping("/recommendations")
-    public ResponseEntity<PayLoadDTO> getReccomondationsBooks() {
+    public ResponseEntity<PayLoadDTO> getRecommendationBooks() {
         try {
             PayLoadDTO payLoadDTO = new PayLoadDTO();
             payLoadDTO.put("recommendations_books_fetched_successfully", bookService.getReccomondationsBooks());
@@ -100,12 +101,13 @@ public class BookController {
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("{id}/status")
     public ResponseEntity<PayLoadDTO> deactivateBook(@PathVariable long id) {
+        PayLoadDTO payLoadDTO = new PayLoadDTO();
         try {
-            PayLoadDTO payLoadDTO = new PayLoadDTO();
             payLoadDTO.put("Book deactivated successfully", bookService.deactivateBook(id));
             return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
         } catch (Exception e) {
-            throw e;
+            payLoadDTO.put("Book deactivated unsuccessfully", false);
+            return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
         }
     }
 

@@ -17,10 +17,6 @@ public class UserDTO {
     private String phoneNumber;
     private String address;
     private UserRoleEnum role;
-    private boolean accountNonExpired;
-    private boolean accountNonLocked;
-    private boolean credentialsNonExpired;
-    private boolean enabled;
 
 
 }
