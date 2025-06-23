@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -23,6 +24,8 @@ public class OrderModel {
 
     @Column(name = "order_number", unique = true, nullable = false)
     private UUID orderNumber;
+
+    private Integer itemCount;
 
     @Column(name = "status")
     private String status;
@@ -52,8 +55,9 @@ public class OrderModel {
 
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id",nullable = false)
     @CreatedBy
+    @LastModifiedBy
     private UserModel user;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)

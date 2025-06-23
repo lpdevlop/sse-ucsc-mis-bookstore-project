@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 
 @Getter
@@ -39,11 +40,14 @@ public class OrderDTO {
     private String country;
     private String province;
 
+    private List<OrderItemDTO> orderItems;
+
+
     public OrderDTO(OrderModel orderModel) {
         this.totalAmount = orderModel.getTotalAmount();
         this.paymentMethod = orderModel.getPaymentMethod();
         this.paymentStatus = orderModel.getStatus();
-        this.trackingNumber=orderModel.getOrderNumber();
+        this.trackingNumber = orderModel.getOrderNumber();
         this.finalAmount = orderModel.getTotalAmount();
         this.shippingMethod = orderModel.getShippingMethod();
         this.firstName = orderModel.getFirstName();
@@ -53,5 +57,6 @@ public class OrderDTO {
         this.zip = orderModel.getZip();
         this.country = orderModel.getCountry();
         this.province = orderModel.getProvince();
+        this.orderItems = orderModel.getOrderItems().stream().map(OrderItemDTO::new).collect(Collectors.toList());
     }
 }

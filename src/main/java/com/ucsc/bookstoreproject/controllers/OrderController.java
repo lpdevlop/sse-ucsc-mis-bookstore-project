@@ -6,6 +6,8 @@ import com.ucsc.bookstoreproject.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -24,12 +26,16 @@ public class OrderController {
     }
 
     public ResponseEntity<Object> searchOrderById() {
-        return ResponseEntity.status(200).body(orderService.searchOrderById());
+        PayLoadDTO payLoadDTO = new PayLoadDTO();
+        payLoadDTO.put("data",orderService.searchOrderById());
+        return ResponseEntity.status(200).body(payLoadDTO);
     }
     @PreAuthorize("hasRole('CUSTOMER')")
     @GetMapping("/my")
     public ResponseEntity<Object> getMyOrders() {
-        return ResponseEntity.status(200).body(orderService.getMyOrders());
+        PayLoadDTO payLoadDTO = new PayLoadDTO();
+        payLoadDTO.put("data",orderService.getMyOrders());
+        return ResponseEntity.status(200).body(payLoadDTO);
     }
 
     @PreAuthorize("hasRole('ADMIN')")

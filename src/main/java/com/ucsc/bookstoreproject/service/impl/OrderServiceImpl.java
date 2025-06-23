@@ -61,9 +61,10 @@ public class OrderServiceImpl implements OrderService {
             } else {
                 throw new EntityNotFoundException("Book not found with ID: ");
             }
-        orderRepository.save(orderModel);
         }
-       return null;
+        orderModel.setItemCount(orderDTO.getItems().size());
+        orderRepository.save(orderModel);
+        return null;
     }
 
     @Override

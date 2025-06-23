@@ -1,9 +1,12 @@
 package com.ucsc.bookstoreproject.database.dto;
 
 import com.ucsc.bookstoreproject.database.model.BookModel;
+import com.ucsc.bookstoreproject.database.model.OrderItemModel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -52,6 +55,5 @@ public class BookDTO {
         this.imageUrl = bookModel.getImageUrl();
         this.isAvailable = bookModel.getIsAvailable();
     }
-
 
 }
