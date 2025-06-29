@@ -14,8 +14,8 @@
       "averageRating": 4.7,
       "pageCount": 1390,
       "format": "eBook",
-      "imageUrl": "https://example.com/images/CleanCodeVol.jpg",
-      "isAvailable": false,
+      "imageUrl": "/images/1.png",
+      "isAvailable": true,
       "active": true
 
     },
@@ -33,7 +33,7 @@
       "averageRating": 3.6,
       "pageCount": 1041,
       "format": "eBook",
-      "imageUrl": "https://example.com/images/book2.jpg",
+      "imageUrl": "/images/2.png",
       "isAvailable": true,
       "active": true
     },
@@ -51,7 +51,7 @@
       "averageRating": 4.5,
       "pageCount": 303,
       "format": "Paperback",
-      "imageUrl": "https://example.com/images/book3.jpg",
+      "imageUrl": "/images/3.png",
       "isAvailable": true,
       "active": true
     },
@@ -69,8 +69,8 @@
       "averageRating": 3.9,
       "pageCount": 255,
       "format": "eBook",
-      "imageUrl": "https://example.com/images/book4.jpg",
-      "isAvailable": false,
+      "imageUrl": "/images/4.png",
+      "isAvailable": true,
       "active": true
     },
     {
@@ -87,7 +87,7 @@
       "averageRating": 3.3,
       "pageCount": 407,
       "format": "Hardcover",
-      "imageUrl": "https://example.com/images/book5.jpg",
+      "imageUrl": "/images/5.png",
       "isAvailable": true,
       "active": true
     },
@@ -105,8 +105,8 @@
       "averageRating": 4.5,
       "pageCount": 1481,
       "format": "Hardcover",
-      "imageUrl": "https://example.com/images/book6.jpg",
-      "isAvailable": false,
+      "imageUrl": "/images/6.png",
+      "isAvailable": true,
       "active": true
     },
     {
@@ -123,7 +123,7 @@
       "averageRating": 3.7,
       "pageCount": 911,
       "format": "Paperback",
-      "imageUrl": "https://example.com/images/book7.jpg",
+      "imageUrl": "/images/7.png",
       "isAvailable": true,
       "active": true
     },
@@ -141,8 +141,8 @@
       "averageRating": 3.4,
       "pageCount": 1086,
       "format": "eBook",
-      "imageUrl": "https://example.com/images/book8.jpg",
-      "isAvailable": false,
+      "imageUrl": "/images/8.png",
+      "isAvailable": true,
       "active": true
     },
     {
@@ -159,7 +159,7 @@
       "averageRating": 4.4,
       "pageCount": 1148,
       "format": "Hardcover",
-      "imageUrl": "https://example.com/images/book9.jpg",
+      "imageUrl": "/images/9.jpg",
       "isAvailable": true,
       "active": true
     },
@@ -177,7 +177,7 @@
       "averageRating": 3.9,
       "pageCount": 422,
       "format": "eBook",
-      "imageUrl": "https://example.com/images/book10.jpg",
+      "imageUrl": "/images/10.png",
       "isAvailable": true,
       "active": true
     },
@@ -195,7 +195,7 @@
       "averageRating": 3.8,
       "pageCount": 981,
       "format": "Hardcover",
-      "imageUrl": "https://example.com/images/book11.jpg",
+      "imageUrl": "/images/11.png",
       "isAvailable": true,
       "active": true
     },
@@ -213,7 +213,7 @@
       "averageRating": 4.6,
       "pageCount": 352,
       "format": "Hardcover",
-      "imageUrl": "https://example.com/images/book12.jpg",
+      "imageUrl": "/images/12.png",
       "isAvailable": true,
       "active": true
     },
@@ -231,7 +231,7 @@
       "averageRating": 3.1,
       "pageCount": 1037,
       "format": "Hardcover",
-      "imageUrl": "https://example.com/images/book13.jpg",
+      "imageUrl": "/images/13.png",
       "isAvailable": true,
       "active": true
     },
@@ -249,7 +249,7 @@
       "averageRating": 3.5,
       "pageCount": 1033,
       "format": "Hardcover",
-      "imageUrl": "https://example.com/images/book14.jpg",
+      "imageUrl": "/images/14.png",
       "isAvailable": true,
       "active": true
     },
@@ -267,7 +267,7 @@
       "averageRating": 3.2,
       "pageCount": 1488,
       "format": "Paperback",
-      "imageUrl": "https://example.com/images/book15.jpg",
+      "imageUrl": "/images/15.png",
       "isAvailable": true,
       "active": true
     },
@@ -285,7 +285,7 @@
       "averageRating": 4.5,
       "pageCount": 999,
       "format": "Hardcover",
-      "imageUrl": "https://example.com/images/book16.jpg",
+      "imageUrl": "/images/16.png",
       "isAvailable": true,
       "active": true
     },
@@ -303,7 +303,7 @@
       "averageRating": 3.5,
       "pageCount": 859,
       "format": "eBook",
-      "imageUrl": "https://example.com/images/book17.jpg",
+      "imageUrl": "/images/17.png",
       "isAvailable": true,
       "active": true
     },
@@ -321,7 +321,7 @@
       "averageRating": 3.1,
       "pageCount": 262,
       "format": "Paperback",
-      "imageUrl": "https://example.com/images/book18.jpg",
+      "imageUrl": "/images/18.png",
       "isAvailable": true,
       "active": true
     },
@@ -339,8 +339,8 @@
       "averageRating": 3.6,
       "pageCount": 1000,
       "format": "eBook",
-      "imageUrl": "https://example.com/images/book19.jpg",
-      "isAvailable": false,
+      "imageUrl": "/images/19.png",
+      "isAvailable": true,
       "active": true
     },
     {
@@ -357,7 +357,7 @@
       "averageRating": 4.3,
       "pageCount": 330,
       "format": "Paperback",
-      "imageUrl": "https://example.com/images/book20.jpg",
+      "imageUrl": "/images/20.png",
       "isAvailable": true,
       "active": true
     },
@@ -375,8 +375,8 @@
       "averageRating": 3.7,
       "pageCount": 664,
       "format": "Paperback",
-      "imageUrl": "https://example.com/images/book21.jpg",
-      "isAvailable": false,
+      "imageUrl": "/images/21.png",
+      "isAvailable": true,
       "active": true
     },
     {
@@ -393,8 +393,8 @@
       "averageRating": 4.4,
       "pageCount": 942,
       "format": "Paperback",
-      "imageUrl": "https://example.com/images/book22.jpg",
-      "isAvailable": false,
+      "imageUrl": "/images/22.png",
+      "isAvailable": true,
       "active": true
     },
     {
@@ -411,8 +411,8 @@
       "averageRating": 3.3,
       "pageCount": 337,
       "format": "Hardcover",
-      "imageUrl": "https://example.com/images/book23.jpg",
-      "isAvailable": false,
+      "imageUrl": "/images/23.png",
+      "isAvailable": true,
       "active": true
     },
     {
@@ -429,8 +429,8 @@
       "averageRating": 3.9,
       "pageCount": 1439,
       "format": "eBook",
-      "imageUrl": "https://example.com/images/book24.jpg",
-      "isAvailable": false,
+      "imageUrl": "/images/24.png",
+      "isAvailable": true,
       "active": true
     },
     {
@@ -447,7 +447,7 @@
       "averageRating": 4.4,
       "pageCount": 216,
       "format": "eBook",
-      "imageUrl": "https://example.com/images/book25.jpg",
+      "imageUrl": "/images/25.png",
       "isAvailable": true,
       "active": true
     }
