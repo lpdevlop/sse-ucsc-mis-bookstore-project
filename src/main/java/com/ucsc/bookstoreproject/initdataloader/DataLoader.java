@@ -41,12 +41,22 @@ public class DataLoader implements ApplicationRunner {
             try {
 
                 List<BookModel> roles = configurations.getPlaceholderModel().getBooks().stream().map(BookModel::new).toList();
-                bookDao.upsert(roles);
+                if(bookDao.findDummyData()){
+                    log.info("Initial Data Skip");
+
+                }else {
+                    bookDao.upsert(roles);
+                    log.info("-------Initial Books Data Insert Success----------");
+                }
 
                 List<UserModel> users = configurations.getPlaceholderModel().getUsers().stream().map(UserModel::new).toList();
-                userDao.upsert(users);
+                if(userDao.findDummyData()){
+                    log.info("Initial Data Skip");
+                }else {
+                    userDao.upsert(users);
+                    log.info("Initial Users Insert Success");
+                }
 
-                log.info("Initial Data Insert Success");
             } catch (Exception e) {
                 log.error("Error during data insert: {}", e.getMessage());
             }

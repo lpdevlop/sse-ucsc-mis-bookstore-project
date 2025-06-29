@@ -19,4 +19,7 @@ public class UserDao {
         userRepository.saveAll(userModel);
     }
 
+    public boolean findDummyData() {
+        return userRepository.findDummyData();
+    }
 }

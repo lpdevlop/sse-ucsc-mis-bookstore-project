@@ -22,4 +22,11 @@ public interface UserRepository extends JpaRepository<UserModel, Long>{
     @Query(value = "SELECT u FROM UserModel u where u.email=:email")
     Optional<UserModel> getAnyUserByEmail(@Param("email") String email);
 
+
+    @Query("""
+    SELECT CASE WHEN COUNT(b) > 0 THEN TRUE ELSE FALSE END
+    FROM UserModel b
+    WHERE b.isSeedData = true 
+  """)
+    boolean findDummyData();
 }

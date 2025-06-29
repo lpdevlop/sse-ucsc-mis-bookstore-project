@@ -35,6 +35,8 @@ public class UserModel implements UserDetails {
     @NotBlank(message = "last name is required")
     private String lastName;
 
+    private Boolean isSeedData ;
+
     @NotBlank(message = "password is required")
     private String password;
 
@@ -71,6 +73,7 @@ public class UserModel implements UserDetails {
         this.address = userModel.getAddress();
         this.phoneNumber = userModel.getPhoneNumber();
         this.role = userModel.getRole();
+        this.isSeedData=userModel.getIsSeedData();
         this.accountNonExpired = true;
         this.accountNonLocked = true;
         this.credentialsNonExpired = true;
@@ -128,6 +131,7 @@ public class UserModel implements UserDetails {
         this.phoneNumber = userDTO.getPhoneNumber();
         this.role = userDTO.getRole();
         this.accountNonExpired = true;
+        this.isSeedData=userDTO.getIsSeedData();
         this.accountNonLocked = true;
         this.credentialsNonExpired = true;
         this.enabled = true;

@@ -16,7 +16,8 @@
       "format": "eBook",
       "imageUrl": "/images/1.png",
       "isAvailable": true,
-      "active": true
+      "active": true,
+      "isSeedData": true
 
     },
     {
@@ -35,7 +36,9 @@
       "format": "eBook",
       "imageUrl": "/images/2.png",
       "isAvailable": true,
-      "active": true
+      "active": true,
+      "isSeedData": true
+
     },
     {
       "title": "Artificial Intelligence: A Modern Approach Vol. 3",
@@ -53,7 +56,9 @@
       "format": "Paperback",
       "imageUrl": "/images/3.png",
       "isAvailable": true,
-      "active": true
+      "active": true,
+      "isSeedData": true
+
     },
     {
       "title": "The Art of Computer Programming Vol. 4",
@@ -71,7 +76,9 @@
       "format": "eBook",
       "imageUrl": "/images/4.png",
       "isAvailable": true,
-      "active": true
+      "active": true,
+      "isSeedData": true
+
     },
     {
       "title": "Structure and Interpretation of Computer Programs Vol. 5",
@@ -89,7 +96,9 @@
       "format": "Hardcover",
       "imageUrl": "/images/5.png",
       "isAvailable": true,
-      "active": true
+      "active": true,
+      "isSeedData": true
+
     },
     {
       "title": "Refactoring Vol. 6",
@@ -107,7 +116,9 @@
       "format": "Hardcover",
       "imageUrl": "/images/6.png",
       "isAvailable": true,
-      "active": true
+      "active": true,
+      "isSeedData": true
+
     },
     {
       "title": "Computer Networking: A Top-Down Approach Vol. 7",
@@ -125,7 +136,9 @@
       "format": "Paperback",
       "imageUrl": "/images/7.png",
       "isAvailable": true,
-      "active": true
+      "active": true,
+      "isSeedData": true
+
     },
     {
       "title": "Cracking the Coding Interview Vol. 8",
@@ -143,7 +156,9 @@
       "format": "eBook",
       "imageUrl": "/images/8.png",
       "isAvailable": true,
-      "active": true
+      "active": true,
+      "isSeedData": true
+
     },
     {
       "title": "Structure and Interpretation of Computer Programs Vol. 9",
@@ -161,7 +176,9 @@
       "format": "Hardcover",
       "imageUrl": "/images/9.jpg",
       "isAvailable": true,
-      "active": true
+      "active": true,
+      "isSeedData": true
+
     },
     {
       "title": "Design Patterns Vol. 10",
@@ -179,7 +196,9 @@
       "format": "eBook",
       "imageUrl": "/images/10.png",
       "isAvailable": true,
-      "active": true
+      "active": true,
+      "isSeedData": true
+
     },
     {
       "title": "Structure and Interpretation of Computer Programs Vol. 11",
@@ -197,7 +216,9 @@
       "format": "Hardcover",
       "imageUrl": "/images/11.png",
       "isAvailable": true,
-      "active": true
+      "active": true,
+      "isSeedData": true
+
     },
     {
       "title": "You Don't Know JS Vol. 12",
@@ -215,7 +236,9 @@
       "format": "Hardcover",
       "imageUrl": "/images/12.png",
       "isAvailable": true,
-      "active": true
+      "active": true,
+      "isSeedData": true
+
     },
     {
       "title": "The Mythical Man-Month Vol. 13",
@@ -233,7 +256,9 @@
       "format": "Hardcover",
       "imageUrl": "/images/13.png",
       "isAvailable": true,
-      "active": true
+      "active": true,
+      "isSeedData": true
+
     },
     {
       "title": "Structure and Interpretation of Computer Programs Vol. 14",
@@ -251,7 +276,9 @@
       "format": "Hardcover",
       "imageUrl": "/images/14.png",
       "isAvailable": true,
-      "active": true
+      "active": true,
+      "isSeedData": true
+
     },
     {
       "title": "Operating Systems: Three Easy Pieces Vol. 15",
@@ -269,7 +296,9 @@
       "format": "Paperback",
       "imageUrl": "/images/15.png",
       "isAvailable": true,
-      "active": true
+      "active": true,
+      "isSeedData": true
+
     },
     {
       "title": "Operating Systems: Three Easy Pieces Vol. 16",
@@ -287,7 +316,9 @@
       "format": "Hardcover",
       "imageUrl": "/images/16.png",
       "isAvailable": true,
-      "active": true
+      "active": true,
+      "isSeedData": true
+
     },
     {
       "title": "You Don't Know JS Vol. 17",
@@ -305,7 +336,9 @@
       "format": "eBook",
       "imageUrl": "/images/17.png",
       "isAvailable": true,
-      "active": true
+      "active": true,
+      "isSeedData": true
+
     },
     {
       "title": "The Pragmatic Programmer Vol. 18",
@@ -323,7 +356,9 @@
       "format": "Paperback",
       "imageUrl": "/images/18.png",
       "isAvailable": true,
-      "active": true
+      "active": true,
+      "isSeedData": true
+
     },
     {
       "title": "The Mythical Man-Month Vol. 19",
@@ -341,7 +376,9 @@
       "format": "eBook",
       "imageUrl": "/images/19.png",
       "isAvailable": true,
-      "active": true
+      "active": true,
+      "isSeedData": true
+
     },
     {
       "title": "Structure and Interpretation of Computer Programs Vol. 20",
@@ -359,7 +396,9 @@
       "format": "Paperback",
       "imageUrl": "/images/20.png",
       "isAvailable": true,
-      "active": true
+      "active": true,
+      "isSeedData": true
+
     },
     {
       "title": "Refactoring Vol. 21",
@@ -377,7 +416,9 @@
       "format": "Paperback",
       "imageUrl": "/images/21.png",
       "isAvailable": true,
-      "active": true
+      "active": true,
+      "isSeedData": true
+
     },
     {
       "title": "Cracking the Coding Interview Vol. 22",
@@ -395,7 +436,9 @@
       "format": "Paperback",
       "imageUrl": "/images/22.png",
       "isAvailable": true,
-      "active": true
+      "active": true,
+      "isSeedData": true
+
     },
     {
       "title": "Artificial Intelligence: A Modern Approach Vol. 23",
@@ -413,7 +456,9 @@
       "format": "Hardcover",
       "imageUrl": "/images/23.png",
       "isAvailable": true,
-      "active": true
+      "active": true,
+      "isSeedData": true
+
     },
     {
       "title": "Operating Systems: Three Easy Pieces Vol. 24",
@@ -431,7 +476,9 @@
       "format": "eBook",
       "imageUrl": "/images/24.png",
       "isAvailable": true,
-      "active": true
+      "active": true,
+      "isSeedData": true
+
     },
     {
       "title": "Computer Networking: A Top-Down Approach Vol. 25",
@@ -449,7 +496,8 @@
       "format": "eBook",
       "imageUrl": "/images/25.png",
       "isAvailable": true,
-      "active": true
+      "active": true,
+      "isSeedData": true
     }
   ],
 
@@ -457,30 +505,17 @@
     {
       "id": 1,
       "firstName": "SUPER ADMIN",
-      "lastName": "Johnson",
+      "lastName": "SUPER ADMIN",
       "password": "$2a$10$U6X67D/D/6loWd/dUqTj4.ghHgcSWuDY.BcRtRrz8E1AJFes3CX8a",
-      "email": "alice.johnson@example.com",
+      "email": "bookstore@ucsc.com",
       "address": "123 Main Street, Springfield",
       "phoneNumber": "1234567890",
       "role": "SUPER_ADMIN",
       "accountNonExpired": true,
       "accountNonLocked": true,
       "credentialsNonExpired": true,
-      "enabled": true
-    },
-    {
-      "id": 2,
-      "firstName": "ADMIN",
-      "lastName": "Smith",
-      "password": "$2a$10$U6X67D/D/6loWd/dUqTj4.ghHgcSWuDY.BcRtRrz8E1AJFes3CX8a",
-      "email": "bob.smith@example.com",
-      "address": "456 Elm Street, Shelbyville",
-      "phoneNumber": "0987654321",
-      "role": "ADMIN",
-      "accountNonExpired": true,
-      "accountNonLocked": true,
-      "credentialsNonExpired": true,
-      "enabled": true
+      "enabled": true,
+      "isSeedData": true
     }
   ]
 }

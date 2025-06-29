@@ -17,4 +17,8 @@ public class BookDao {
     public void upsert(List<BookModel> roles) {
         bookRepository.saveAll(roles);
     }
+
+    public boolean findDummyData() {
+        return bookRepository.findDummyData();
+    }
 }

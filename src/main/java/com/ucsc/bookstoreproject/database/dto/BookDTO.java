@@ -15,6 +15,9 @@ public class BookDTO {
 
     private Long id;
 
+    private Boolean isSeedData;
+
+
     private Boolean active;
     private String title;
     private String author;

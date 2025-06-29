@@ -20,4 +20,11 @@ public interface BookRepository extends JpaRepository<BookModel,Long>, JpaSpecif
       SET b.active = CASE WHEN b.active = TRUE THEN FALSE ELSE TRUE END
     WHERE b.id = :id
   """)    Integer updateBookStatus(@Param("id") Long id);
+
+    @Query("""
+    SELECT CASE WHEN COUNT(b) > 0 THEN TRUE ELSE FALSE END
+    FROM BookModel b
+    WHERE b.isSeedData = true 
+  """)
+    boolean findDummyData();
 }

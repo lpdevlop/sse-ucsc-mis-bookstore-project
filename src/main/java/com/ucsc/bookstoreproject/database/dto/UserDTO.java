@@ -18,5 +18,6 @@ public class UserDTO {
     private String address;
     private UserRoleEnum role;
 
+    private Boolean isSeedData ;
 
 }

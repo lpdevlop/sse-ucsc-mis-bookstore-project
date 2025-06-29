@@ -52,6 +52,7 @@ public class BookModel {
 
     private Boolean isAvailable;
 
+    private Boolean isSeedData ;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
@@ -69,6 +70,7 @@ public class BookModel {
         this.isbn = bookDTO.getIsbn();
         this.price=bookDTO.getPrice();
         this.active=bookDTO.getActive();
+        this.isSeedData=bookDTO.getIsSeedData();
         this.publisher = bookDTO.getPublisher();
         this.language = bookDTO.getLanguage();
         this.genre = bookDTO.getGenre();
