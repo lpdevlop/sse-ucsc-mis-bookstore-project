@@ -4,6 +4,8 @@ import com.ucsc.bookstoreproject.database.model.BookModel;
 import org.springframework.data.jpa.domain.Specification;
 
 public class BookSpecification {
+    private BookSpecification() {
+    }
 
     public static Specification<BookModel> hasTitle(String title){
         return (root,query,criteriaBuilder) -> criteriaBuilder.like(criteriaBuilder.lower(root.get("title")), "%" + title.toLowerCase() + "%");

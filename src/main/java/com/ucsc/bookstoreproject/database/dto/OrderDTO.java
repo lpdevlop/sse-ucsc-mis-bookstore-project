@@ -1,13 +1,10 @@
 package com.ucsc.bookstoreproject.database.dto;
 import com.ucsc.bookstoreproject.database.model.OrderModel;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 
 @Getter
@@ -57,6 +54,6 @@ public class OrderDTO {
         this.zip = orderModel.getZip();
         this.country = orderModel.getCountry();
         this.province = orderModel.getProvince();
-        this.orderItems = orderModel.getOrderItems().stream().map(OrderItemDTO::new).collect(Collectors.toList());
+        this.orderItems = orderModel.getOrderItems().stream().map(OrderItemDTO::new).toList();
     }
 }

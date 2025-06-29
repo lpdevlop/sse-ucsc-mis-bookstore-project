@@ -19,8 +19,8 @@ public class Commons {
     public static String readFile(File file) throws IOException {
         try (InputStream in = new FileInputStream(file)) {
             return new String(in.readAllBytes(), StandardCharsets.UTF_8);
-        } catch (IOException e) {
-            log.error("Error reading file: {}", file.getAbsolutePath(), e);
+        } catch (Exception e) {
+            log.error("Error reading file");
             throw e;
         }
     }

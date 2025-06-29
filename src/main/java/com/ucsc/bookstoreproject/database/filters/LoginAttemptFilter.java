@@ -10,7 +10,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class LoginAttemptFilter {
 
     private static final int MAX_ATTEMPTS = 5;
-    private static final long LOCK_TIME_MS = 15 * 60 * 1000;
+    private static final long LOCK_TIME_MS = 15L * 60L * 1000L;
 
     private final Map<String, AttemptInfo> ipAttempts = new ConcurrentHashMap<>();
 

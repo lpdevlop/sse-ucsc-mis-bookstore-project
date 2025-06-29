@@ -1,6 +1,5 @@
 package com.ucsc.bookstoreproject.database.dto;
 
-import com.ucsc.bookstoreproject.database.model.BookModel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,9 +15,6 @@ public class PaginatedResponseDTO<T>{
     private int totalPages;
     private boolean last;
 
-    public PaginatedResponseDTO(BookModel bookModel) {
-
-    }
 
 
     public PaginatedResponseDTO(List<T> content, int number, int size, long totalElements, int totalPages) {

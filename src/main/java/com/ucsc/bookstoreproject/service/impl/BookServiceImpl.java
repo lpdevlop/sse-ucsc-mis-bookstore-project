@@ -20,7 +20,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Service
@@ -89,7 +88,7 @@ public class BookServiceImpl implements BookService {
         List<BookDTO> dtos = resultPage.getContent()
                 .stream()
                 .map(BookDTO::new)
-                .collect(Collectors.toList());
+                .toList();
 
         return new PaginatedResponseDTO<>(
                 dtos,
@@ -106,18 +105,18 @@ public class BookServiceImpl implements BookService {
                 .filter(BookModel::getActive)
                 .sorted(Comparator.comparing(BookModel::getTitle))
                 .limit(10)
-                .collect(Collectors.toList());
+                .toList();
 
     }
 
     @Override
     public Object getTopSellingBooks() {
-        return bookRepository.findAll().stream().filter(k->k.getActive().equals(true)).limit(4).collect(Collectors.toList());
+        return bookRepository.findAll().stream().filter(k->k.getActive().equals(true)).limit(4).toList();
     }
 
     @Override
     public Object getReccomondationsBooks() {
-        return bookRepository.findAll().stream().filter(k->k.getActive().equals(true)).limit(10).collect(Collectors.toList());
+        return bookRepository.findAll().stream().filter(k->k.getActive().equals(true)).limit(10).toList();
     }
 
     @Override

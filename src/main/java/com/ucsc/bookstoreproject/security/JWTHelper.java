@@ -2,25 +2,23 @@ package com.ucsc.bookstoreproject.security;
 
 
 import com.ucsc.bookstoreproject.database.model.UserModel;
-import com.ucsc.bookstoreproject.utils.keyUtils;
+import com.ucsc.bookstoreproject.exceptions.CustomException;
+import com.ucsc.bookstoreproject.utils.KeyUtils;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import jakarta.annotation.PostConstruct;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
-import java.security.SignatureException;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.util.*;
 
 @Component
+@Slf4j
 public class JWTHelper {
 
     private RSAPrivateKey privateKey;
@@ -31,9 +29,9 @@ public class JWTHelper {
     @PostConstruct
     public  void initKeys() throws  Exception{
 
-        this.publicKey = keyUtils.loadPublicKey("public_key.pem");
-        this.privateKey = keyUtils.loadPrivateKey("private_key.pem");
-        System.out.println("🔐 RSA keys loaded successfully");
+        this.publicKey = KeyUtils.loadPublicKey("public_key.pem");
+        this.privateKey = KeyUtils.loadPrivateKey("private_key.pem");
+        log.info("RSA keys loaded successfully");
 
     }
 
@@ -88,7 +86,7 @@ public class JWTHelper {
                     .getBody();
             return claims.get("email", String.class);
         } catch (Exception ex) {
-            throw new RuntimeException("Invalid token", ex);
+            throw new CustomException("Invalid token", HttpStatus.BAD_REQUEST);
         }
     }
 

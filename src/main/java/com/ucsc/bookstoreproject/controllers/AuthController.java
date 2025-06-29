@@ -5,7 +5,6 @@ import com.ucsc.bookstoreproject.database.dto.PayLoadDTO;
 import com.ucsc.bookstoreproject.database.dto.TokenResponseDTO;
 import com.ucsc.bookstoreproject.database.dto.login.LoginDTO;
 import com.ucsc.bookstoreproject.database.filters.LoginAttemptFilter;
-import com.ucsc.bookstoreproject.database.filters.LoginRateLimitInterceptor;
 import com.ucsc.bookstoreproject.database.model.UserModel;
 import com.ucsc.bookstoreproject.security.JWTHelper;
 import jakarta.servlet.http.HttpServletRequest;
@@ -18,15 +17,11 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Hashtable;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/v1/auth")
@@ -52,7 +47,7 @@ public class AuthController {
             }
             Authentication auth = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginDTO.getEmail(), loginDTO.getPassword()));
             UserModel userModel = (UserModel) auth.getPrincipal();
-            String token = jwtHelper.generateToken(userModel.getUuid(),userModel.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList()));
+            String token = jwtHelper.generateToken(userModel.getUuid(),userModel.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList());
             if(Objects.nonNull(token)) {
                 loginAttemptFilter.loginSucceeded(ip);
                 payLoadDTO.put("data", new TokenResponseDTO(token));

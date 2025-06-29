@@ -23,7 +23,7 @@ public class UserModel implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long Id;
+    private long id;
 
 
     @Column(name = "uuid", unique = true, nullable = false, updatable = false)

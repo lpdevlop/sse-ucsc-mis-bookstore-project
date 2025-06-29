@@ -3,6 +3,7 @@ package com.ucsc.bookstoreproject.controllers;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,5 +30,10 @@ public class ImageController {
         } else {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
         }
+    }
+
+    @GetMapping("/test")
+    public ResponseEntity<String> test() {
+        return ResponseEntity.ok("Test successful");
     }
 }

@@ -4,6 +4,7 @@ package com.ucsc.bookstoreproject.controllers;
 import com.ucsc.bookstoreproject.database.dto.BookDTO;
 import com.ucsc.bookstoreproject.database.dto.PayLoadDTO;
 import com.ucsc.bookstoreproject.service.BookService;
+import com.ucsc.bookstoreproject.utils.Constant;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/v1/book")
 @RequiredArgsConstructor
-public class BookController {
+public class BookController extends BaseController{
 
     private final BookService bookService;
 
@@ -27,7 +28,7 @@ public class BookController {
             payLoadDTO.put("Book added successfully",bookService.addBooks(bookDTO));
             return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
         }catch (Exception e){
-            throw e;
+            return errorResponse(HttpStatus.BAD_REQUEST, Constant.ERROR_MESSAGE);
         }
     }
 
@@ -38,7 +39,7 @@ public class BookController {
             payLoadDTO.put("Book deleted successfully", bookService.deleteBooks(bookDTO));
             return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
         }catch (Exception e){
-            throw e;
+            return errorResponse(HttpStatus.BAD_REQUEST,Constant.ERROR_MESSAGE);
         }
     }
 
@@ -49,7 +50,7 @@ public class BookController {
             payLoadDTO.put("book_searched_successfully", bookService.searchBooks(bookDTO.getTitle(),bookDTO.getAuthor(),bookDTO.getIsbn(),bookDTO.getDescription(),bookDTO.getPage(),bookDTO.getSize()));
             return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
         } catch (Exception e) {
-            throw e;
+            return errorResponse(HttpStatus.BAD_REQUEST,Constant.ERROR_MESSAGE);
         }
     }
 
@@ -60,7 +61,7 @@ public class BookController {
             payLoadDTO.put("book_searched_successfully", bookService.searchBooksByIsbn(isbn));
             return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
         } catch (Exception e) {
-            throw e;
+            return errorResponse(HttpStatus.BAD_REQUEST,Constant.ERROR_MESSAGE);
         }
     }
 
@@ -73,7 +74,7 @@ public class BookController {
             payLoadDTO.put("Latest books fetched successfully", bookService.getLatestBooks());
             return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
         } catch (Exception e) {
-            throw e;
+            return errorResponse(HttpStatus.BAD_REQUEST,Constant.ERROR_MESSAGE);
         }
     }
     @GetMapping("/top")
@@ -83,7 +84,7 @@ public class BookController {
             payLoadDTO.put("top_selling_books_fetched_successfully", bookService.getTopSellingBooks());
             return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
         } catch (Exception e) {
-            throw e;
+            return errorResponse(HttpStatus.BAD_REQUEST,Constant.ERROR_MESSAGE);
         }
     }
 
@@ -94,7 +95,7 @@ public class BookController {
             payLoadDTO.put("recommendations_books_fetched_successfully", bookService.getReccomondationsBooks());
             return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
         } catch (Exception e) {
-            throw e;
+            return errorResponse(HttpStatus.BAD_REQUEST,Constant.ERROR_MESSAGE);
         }
     }
 
@@ -106,8 +107,7 @@ public class BookController {
             payLoadDTO.put("Book deactivated successfully", bookService.deactivateBook(id));
             return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
         } catch (Exception e) {
-            payLoadDTO.put("Book deactivated unsuccessfully", false);
-            return ResponseEntity.status(HttpStatus.OK).body(payLoadDTO);
+            return errorResponse(HttpStatus.BAD_REQUEST,Constant.ERROR_MESSAGE);
         }
     }
 

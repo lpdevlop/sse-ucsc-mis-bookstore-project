@@ -1,7 +1,6 @@
 package com.ucsc.bookstoreproject.database.dto.user;
 
 
-import com.ucsc.bookstoreproject.enums.UserRoleEnum;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -71,6 +71,8 @@ public class SecurityConfiguration {
                         .requestMatchers("/api/v1/book/top").permitAll()
                         .requestMatchers("/api/v1/book/recommendations").permitAll()
                         .requestMatchers("/api/v1/book/search").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/images/{imageName:.+}").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/test").permitAll()
                         .anyRequest().authenticated())
                 .exceptionHandling(ex -> ex.authenticationEntryPoint(point))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));

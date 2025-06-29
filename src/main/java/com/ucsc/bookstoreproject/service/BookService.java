@@ -3,8 +3,6 @@ package com.ucsc.bookstoreproject.service;
 import com.ucsc.bookstoreproject.database.dto.BookDTO;
 import com.ucsc.bookstoreproject.database.dto.PaginatedResponseDTO;
 
-import java.util.List;
-
 public interface BookService {
     Long addBooks(BookDTO bookDTO);
 
