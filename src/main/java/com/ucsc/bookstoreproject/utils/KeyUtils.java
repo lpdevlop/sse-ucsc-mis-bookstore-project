@@ -4,6 +4,8 @@ import lombok.experimental.UtilityClass;
 import org.springframework.core.io.ClassPathResource;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.security.KeyFactory;
 import java.security.NoSuchAlgorithmException;
@@ -44,8 +46,9 @@ public class KeyUtils {
 
     private static String readKeyFromFile(String path) throws IOException {
         ClassPathResource resource = new ClassPathResource(path);
-        return new String(Files.readAllBytes(resource.getFile().toPath()));
-
+        try (InputStream inputStream = resource.getInputStream()) {
+            return new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
+        }
     }
 
 }

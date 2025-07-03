@@ -36,7 +36,6 @@ public class Configurations {
         try {
             Resource resource = resourceLoader.getResource("classpath:data.json");
             String content = Commons.readFile(resource.getFile());
-            log.info("Loaded file content: {}", content);
             this.placeholderModel = objectMapper.readValue(content, PlaceHolderModels.class);
             log.info("Placeholder data loaded successfully.");
         } catch (IOException e) {
