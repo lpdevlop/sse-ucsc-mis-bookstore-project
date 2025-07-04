@@ -54,7 +54,6 @@ public class BookServiceImpl implements BookService {
             bookModel1.setAverageRating(bookDTO.getAverageRating());
             bookModel1.setPageCount(bookDTO.getPageCount());
             bookModel1.setFormat(bookDTO.getFormat());
-            bookModel1.setImageUrl(bookDTO.getImageUrl());
             bookModel1.setIsAvailable(bookDTO.getIsAvailable());
          return bookRepository.save(bookModel1).getId();
     }
