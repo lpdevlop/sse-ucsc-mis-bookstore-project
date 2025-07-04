@@ -28,7 +28,14 @@ public class ImageController {
             response.setHeader("Cache-Control", "no-store, must-revalidate");
             StreamUtils.copy(imgFile.getInputStream(), response.getOutputStream());
         } else {
-            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            String imageNames="na";
+            String contentType = imageNames.endsWith(".jpeg") ? MediaType.IMAGE_PNG_VALUE : MediaType.IMAGE_JPEG_VALUE;
+            ClassPathResource naFile = new ClassPathResource("static/images/" + imageNames.concat(".jpeg"));
+            response.setContentType(contentType);
+            response.setHeader("X-Content-Type-Options", "nosniff");
+            response.setHeader("X-Frame-Options", "DENY");
+            response.setHeader("Cache-Control", "no-store, must-revalidate");
+            StreamUtils.copy(naFile.getInputStream(), response.getOutputStream());
         }
     }
 
